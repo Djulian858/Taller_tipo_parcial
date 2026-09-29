@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Consolas Nintendo, accesorios y precios en pesos colombianos en Consolas Velasquez.">
+    <meta name="theme-color" content="#17231f">
+    <title>Consolas Velasquez | Nintendo para todos</title>
+    <link rel="stylesheet" href="store.css">
+    <script src="store.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+    <header class="store-header">
+      <a class="store-brand" href="#inicio" aria-label="Consolas Velasquez, inicio">
+        <span class="brand-symbol" aria-hidden="true"><span></span><span></span></span>
+        <span class="brand-name">Consolas <strong>Velasquez</strong></span>
+      </a>
+      <nav class="store-nav" aria-label="Navegación principal">
+        <a href="#catalogo">Consolas</a>
+        <a href="#carrito" class="cart-link"><span class="bag-icon" aria-hidden="true"></span> Carrito <span id="cart-count" class="cart-count" aria-live="polite">0</span></a>
+      </nav>
+    </header>
+
+    <main id="contenido">
+      <section id="inicio" class="hero" aria-labelledby="hero-title">
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <p class="hero-kicker"><span aria-hidden="true"></span> TU TIENDA NINTENDO EN COLOMBIA</p>
+            <h1 id="hero-title">Juega a tu manera<span>.</span></h1>
+            <p class="hero-description">Encuentra tu próxima consola, elige tu aventura y llévatela a casa.</p>
+            <a class="hero-button" href="#catalogo">Explorar consolas <span aria-hidden="true">↓</span></a>
+            <p class="hero-note">Precios de referencia en pesos colombianos (COP).</p>
+          </div>
+          <figure class="hero-product">
+            <img src="imagenes/Mario.jpg" alt="Mario, personaje del universo Nintendo" fetchpriority="high">
+          </figure>
+        </div>
+      </section>
+
+      <section id="catalogo" class="catalog section-shell" aria-labelledby="catalog-title">
+        <div class="section-topline">
+          <div>
+            <p class="section-kicker">ELIGE TU CONSOLA</p>
+            <h2 id="catalog-title">Diversión para llevar<span>.</span></h2>
+          </div>
+          <label class="search-control" for="product-search">
+            <span class="search-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Buscar consolas</span>
+            <input id="product-search" type="search" placeholder="Buscar en el catálogo" autocomplete="off">
+          </label>
+        </div>
+        <p id="catalog-count" class="catalog-count" aria-live="polite"></p>
+        <div id="product-grid" class="product-grid"></div>
+      </section>
+
+      <section id="carrito" class="checkout-section" aria-labelledby="cart-title">
+        <div class="section-shell">
+          <div class="section-topline cart-heading">
+            <div>
+              <p class="section-kicker">TU SELECCIÓN</p>
+              <h2 id="cart-title">Carrito de compras<span>.</span></h2>
+            </div>
+            <p class="currency-note">Todos los precios están en COP.</p>
+          </div>
+
+          <div class="checkout-layout">
+            <div class="cart-table-wrap" role="region" aria-label="Productos en el carrito" tabindex="0">
+              <table class="cart-table">
+                <caption class="visually-hidden">Detalle de los productos seleccionados, cantidades y subtotales</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Subtotal</th>
+                    <th scope="col"><span class="visually-hidden">Acciones</span></th>
+                  </tr>
+                </thead>
+                <tbody id="cart-items"></tbody>
+              </table>
+              <p class="cart-footnote">La disponibilidad y el precio final se confirman al realizar el pedido.</p>
+            </div>
+
+            <aside class="order-panel" aria-labelledby="order-title">
+              <div class="order-total-line">
+                <h3 id="order-title">Resumen</h3>
+                <span id="cart-total" class="order-total">$ 0</span>
+              </div>
+              <p class="order-caption">Total estimado · pesos colombianos</p>
+              <form id="order-form" class="order-form">
+                <div class="form-field">
+                  <label for="customer-name">Nombre completo <span aria-hidden="true">*</span></label>
+                  <input id="customer-name" name="customerName" type="text" autocomplete="name" maxlength="80" required>
+                </div>
+                <div class="form-field">
+                  <label for="customer-email">Correo electrónico <span aria-hidden="true">*</span></label>
+                  <input id="customer-email" name="email" type="email" autocomplete="email" required>
+                </div>
+                <div class="form-field">
+                  <label for="customer-city">Ciudad de entrega <span aria-hidden="true">*</span></label>
+                  <select id="customer-city" name="city" autocomplete="address-level2" required>
+                    <option value="" selected disabled>Selecciona tu ciudad</option>
+                    <option>Bogotá</option>
+                    <option>Medellín</option>
+                    <option>Cali</option>
+                    <option>Barranquilla</option>
+                    <option>Otra ciudad</option>
+                  </select>
+                </div>
+                <button id="order-button" class="order-button" type="submit" disabled>Preparar pedido <span aria-hidden="true">→</span></button>
+                <p class="order-disclaimer">Esta página no procesa pagos. La tienda confirmará disponibilidad, envío y pago contigo.</p>
+                <p id="order-status" class="order-status" role="status" aria-live="polite"></p>
+              </form>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="store-footer">
+      <a class="store-brand footer-brand" href="#inicio" aria-label="Consolas Velasquez, volver al inicio">
+        <span class="brand-symbol" aria-hidden="true"><span></span><span></span></span>
+        <span class="brand-name">Consolas <strong>Velasquez</strong></span>
+      </a>
+      <p>Tienda independiente, no afiliada a Nintendo.</p>
+      <a class="back-to-top" href="#contenido">Volver arriba <span aria-hidden="true">↑</span></a>
+    </footer>
+  </body>
+</html>
